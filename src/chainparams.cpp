@@ -54,6 +54,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
 	(0, uint256("00000d7cb461b296faeb5c53c92589252fb53001aa33481c22ce10ff0605f924"))
+	(2500, uint256("97d9184dfdb852901368c2694bfea5872cb1f70cb07040001986376feb1a79f1"))
+	(4500, uint256("9d8118a223bdef2e8d45f584a22384555badd1f12f508871c91a1f4ab24deb53"))
+	(17500, uint256("1af49d63dc84ee3a0517bb4c642ed89c434d8ce3f7c5149a33b8b3d7c51acd53"))
+
 
 
 	;
@@ -240,12 +244,12 @@ public:
 
         vSeeds.push_back(CDNSSeedData("208.76.223.124", "208.76.223.124"));
         vSeeds.push_back(CDNSSeedData("70.34.211.78", "70.34.211.78"));		
-        vSeeds.push_back(CDNSSeedData("155.138.145.134", "155.138.145.134"));
+        vSeeds.push_back(CDNSSeedData("178.128.44.32", "178.128.44.32"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 35);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 36);
-        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 35);     // starting with 'F'
+        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 30);     // starting with 'F'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 163);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
