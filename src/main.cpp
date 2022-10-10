@@ -2017,19 +2017,24 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1 * COIN;
     } else if (nHeight <= 4000 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 9 * COIN;
-    } else if (nHeight <= 350000 && nHeight >= 4000) {
+    } else if (nHeight <= 250000 && nHeight > 4000) {
         nSubsidy = 7 * COIN;
-    } else if (nHeight <= 1200000 && nHeight >= 350000) {
-        nSubsidy = 5 * COIN;
-    } else if (nHeight <= 2500000 && nHeight >= 1200000) {
-        nSubsidy = 4 * COIN;
-    } else if (nHeight <= 5000000 && nHeight >= 2500000) {
-        nSubsidy = 2 * COIN;
+    } else if (nHeight <= 500000 && nHeight > 250000) {
+        nSubsidy = 9 * COIN;
+    } else if (nHeight <= 750000 && nHeight > 500000) {
+        nSubsidy = 7 * COIN;
+    } else if (nHeight <= 1500000 && nHeight > 750000) {
+        nSubsidy = 6 * COIN;
+    } else if (nHeight <= 2500000 && nHeight > 1500000) {
+        nSubsidy = 3 * COIN;
+    } else if (nHeight <= 5000000 && nHeight > 2500000) {
+        nSubsidy = 1 * COIN;
 
     } else {
         nSubsidy = 0.5 * COIN;
     }
     return nSubsidy;
+
 }
 
 

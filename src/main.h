@@ -282,11 +282,22 @@ inline int64_t GetMasterNodeCollateral(int nHeight){
         return 1000;
     } else if (nHeight <= 4000 && nHeight > 250) {
         return 1000;
-    } else if (nHeight <= 50000000 && nHeight > 4000) {
+    } else if (nHeight <= 250000 && nHeight > 4000) {
         return 10000;
-
+    } else if (nHeight <= 500000 && nHeight > 250000) {
+        return 15000;
+    } else if (nHeight <= 750000 && nHeight > 500000) {
+        return 20000;
+    } else if (nHeight <= 1500000 && nHeight > 750000) {
+        return 30000;
+    } else if (nHeight <= 2500000 && nHeight > 1500000) {
+        return 50000;
+    } else if (nHeight <= 5000000 && nHeight > 2500000) {
+        return 50000;
+		
     }
-    return 10000;
+    return 50000;
+
 }
 
 
