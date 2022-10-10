@@ -57,8 +57,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 	(2500, uint256("97d9184dfdb852901368c2694bfea5872cb1f70cb07040001986376feb1a79f1"))
 	(4500, uint256("9d8118a223bdef2e8d45f584a22384555badd1f12f508871c91a1f4ab24deb53"))
 	(17500, uint256("1af49d63dc84ee3a0517bb4c642ed89c434d8ce3f7c5149a33b8b3d7c51acd53"))
+	(75000, uint256("146fa34e45ed420ef41cf2e55da515dc6f58eeaf07a04ade14de43f36cb9651f"))
 	(113250, uint256("a8660cb4d2921de722f58aa9c3ca4c0a850e3c057e187cc347f85b302130461e"))
-	(234125, uint256("fb57bfd0c8a01a8ebd1aae199e2608dd3bbb7cbfda45010080b165a24081822a"))
 
 
 	;
@@ -247,13 +247,11 @@ public:
         vSeeds.push_back(CDNSSeedData("70.34.211.78", "70.34.211.78"));		
         vSeeds.push_back(CDNSSeedData("178.128.44.32", "178.128.44.32"));
         vSeeds.push_back(CDNSSeedData("seed1.fucha.rocks", "seed1.fucha.rocks"));
-		vSeeds.push_back(CDNSSeedData("seed2.fucha.rocks", "seed2.fucha.rocks"));
-		vSeeds.push_back(CDNSSeedData("seed3.fucha.rocks", "seed3.fucha.rocks"));
-		vSeeds.push_back(CDNSSeedData("seed4.fucha.rocks", "seed4.fucha.rocks"));
-		vSeeds.push_back(CDNSSeedData("seed5.fucha.rocks", "seed5.fucha.rocks"));
-		vSeeds.push_back(CDNSSeedData("seed6.fucha.rocks", "seed6.fucha.rocks"));
-
-
+	vSeeds.push_back(CDNSSeedData("seed2.fucha.rocks", "seed2.fucha.rocks"));
+	vSeeds.push_back(CDNSSeedData("seed3.fucha.rocks", "seed3.fucha.rocks"));
+	vSeeds.push_back(CDNSSeedData("seed4.fucha.rocks", "seed4.fucha.rocks"));
+	vSeeds.push_back(CDNSSeedData("seed5.fucha.rocks", "seed5.fucha.rocks"));
+	vSeeds.push_back(CDNSSeedData("seed6.fucha.rocks", "seed6.fucha.rocks"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 35);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 36);
