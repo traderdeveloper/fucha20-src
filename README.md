@@ -27,7 +27,7 @@
 </tr>
 <tr>
 <td>Maximum Supply</td>
-<td>120 000 000 FUCHA</td>
+<td>21 000 000 FUCHA</td>
 </tr>
 <tr>
 <td>Minimum Stake Age</td>
