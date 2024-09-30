@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package fuchad/fucha-qt
-for Debian-based Linux systems. If you compile fuchad/fucha-qt yourself, there are some useful files here.
+This directory contains files used to package FUCHAd/FUCHA-qt
+for Debian-based Linux systems. If you compile FUCHAd/FUCHA-qt yourself, there are some useful files here.
 
-## fucha: URI support ##
+## pivx: URI support ##
 
 
-fucha-qt.desktop  (Gnome / Open Desktop)
+FUCHA-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install fucha-qt.desktop
+	sudo desktop-file-install FUCHA-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your fucha-qt binary to `/usr/bin`
-and the `../../share/pixmaps/fucha128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your FUCHA-qt binary to `/usr/bin`
+and the `../../share/pixmaps/pivx128.png` to `/usr/share/pixmaps`
 
-fucha-qt.protocol (KDE)
+FUCHA-qt.protocol (KDE)
 

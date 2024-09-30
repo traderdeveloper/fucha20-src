@@ -1,8 +1,0 @@
-/usr/bin/fucha-cli		--	gen_context(system_u:object_r:fucha_exec_t,s0)
-/usr/sbin/fuchad		--	gen_context(system_u:object_r:fucha_exec_t,s0)
-/usr/lib(64)?/fucha/fuchad		--	gen_context(system_u:object_r:fucha_exec_t,s0)
-
-/etc/fucha(/.*)?		gen_context(system_u:object_r:fucha_conf_t,s0)
-/var/lib/fucha(/.*)?		gen_context(system_u:object_r:fucha_var_lib_t,s0)
-
-(/var)?/run/fuchad(/.*)?   gen_context(system_u:object_r:fucha_var_run_t,s0)

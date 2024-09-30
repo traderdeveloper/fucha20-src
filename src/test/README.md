@@ -5,44 +5,44 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the fuchad tests manually, launch `src/test/test_fucha`. To recompile
+To run the FUCHAd tests manually, launch `src/test/test_FUCHA`. To recompile
 after a test file was modified, run `make` and then run the test again. If you
 modify a non-test file, use `make -C src/test` to recompile only what's needed
-to run the fuchad tests.
+to run the FUCHAd tests.
 
-To add more fuchad tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more FUCHAd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_FIXTURE_TEST_SUITE sections.
 
-To run the fucha-qt tests manually, launch `src/qt/test/test_fucha-qt`
+To run the FUCHA-qt tests manually, launch `src/qt/test/test_FUCHA-qt`
 
-To add more fucha-qt tests, add them to the `src/qt/test/` directory and
+To add more FUCHA-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
 
-test_fucha has some built-in command-line arguments; for
+test_FUCHA has some built-in command-line arguments; for
 example, to run just the getarg_tests verbosely:
 
-    test_fucha --log_level=all --run_test=getarg_tests
+    test_FUCHA --log_level=all --run_test=getarg_tests
 
 ... or to run just the doubledash test:
 
-    test_fucha --run_test=getarg_tests/doubledash
+    test_FUCHA --run_test=getarg_tests/doubledash
 
-Run `test_fucha --help` for the full list.
+Run `test_FUCHA --help` for the full list.
 
 ### Note on adding test cases
 
 The sources in this directory are unit test cases.  Boost includes a
-unit testing framework, and since fucha already uses boost, it makes
+unit testing framework, and since FUCHA already uses boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
 
-The build system is setup to compile an executable called `test_fucha`
+The build system is setup to compile an executable called `test_FUCHA`
 that runs all of the unit tests.  The main source file is called
-test_fucha.cpp, which simply includes other files that contain the
+test_pivx.cpp, which simply includes other files that contain the
 actual unit tests (outside of a couple required preprocessor
 directives). To add a new unit test file to our test suite you need
 to add the file to `src/Makefile.test.include`. The pattern is to

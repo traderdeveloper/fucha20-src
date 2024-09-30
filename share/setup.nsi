@@ -1,27 +1,27 @@
-Name "fucha Coin (64-bit)"
+Name "FUCHA Core (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define COMPANY "fucha Coin project"
-!define URL https://www.fucha.rocks
+!define COMPANY "FUCHA Core project"
+!define URL https://www.pivx.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/src-master/share/pixmaps/fucha.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/src-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/fucha3000/share/pixmaps/pivx.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/fucha3000/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/src-master/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/fucha3000/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "fucha Coin"
-!define MUI_FINISHPAGE_RUN $INSTDIR\fucha-qt.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "FUCHA Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\FUCHA-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/src-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/fucha3000/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -47,22 +47,22 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/src-master/fucha-2.0.0-win64-setup.exe
+OutFile /root/fucha3000/FUCHA-3.0.0-win64-setup.exe
 !if "64" == "64"
-InstallDir $PROGRAMFILES64\fucha
+InstallDir $PROGRAMFILES64\Pivx
 !else
-InstallDir $PROGRAMFILES\fucha
+InstallDir $PROGRAMFILES\Pivx
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 2.0.0.0
-VIAddVersionKey ProductName "fucha Coin"
-VIAddVersionKey ProductVersion "2.0.0"
+VIProductVersion 3.0.0.0
+VIAddVersionKey ProductName "FUCHA Core"
+VIAddVersionKey ProductVersion "3.0.0"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "2.0.0"
+VIAddVersionKey FileVersion "3.0.0"
 VIAddVersionKey FileDescription ""
 VIAddVersionKey LegalCopyright ""
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -72,14 +72,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/src-master/release/fucha-qt.exe
-    File /oname=COPYING.txt /root/src-master/COPYING
-    File /oname=readme.txt /root/src-master/doc/README_windows.txt
+    File /root/fucha3000/release/FUCHA-qt.exe
+    File /oname=COPYING.txt /root/fucha3000/COPYING
+    File /oname=readme.txt /root/fucha3000/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/src-master/release/fuchad.exe
-    File /root/src-master/release/fucha-cli.exe
+    File /root/fucha3000/release/FUCHAd.exe
+    File /root/fucha3000/release/FUCHA-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /root/src-master/doc\*.*
+    File /r /root/fucha3000/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -90,21 +90,22 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\fucha-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\FUCHA-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\FUCHA Core (testnet, 64-bit).lnk" "$INSTDIR\FUCHA-qt.exe" "-testnet" "$INSTDIR\FUCHA-qt.exe" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "2.0.0"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "3.0.0"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\uninstall.exe
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "fucha" "URL Protocol" ""
-    WriteRegStr HKCR "fucha" "" "URL:fucha"
-    WriteRegStr HKCR "fucha\DefaultIcon" "" $INSTDIR\fucha-qt.exe
-    WriteRegStr HKCR "fucha\shell\open\command" "" '"$INSTDIR\fucha-qt.exe" "%1"'
+    WriteRegStr HKCR "FUCHA" "URL Protocol" ""
+    WriteRegStr HKCR "FUCHA" "" "URL:Pivx"
+    WriteRegStr HKCR "FUCHA\DefaultIcon" "" $INSTDIR\FUCHA-qt.exe
+    WriteRegStr HKCR "FUCHA\shell\open\command" "" '"$INSTDIR\FUCHA-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -122,7 +123,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\fucha-qt.exe
+    Delete /REBOOTOK $INSTDIR\FUCHA-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -134,7 +135,8 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\fucha.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\FUCHA Core (testnet, 64-bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Pivx.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -142,7 +144,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "fucha"
+    DeleteRegKey HKCR "FUCHA"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

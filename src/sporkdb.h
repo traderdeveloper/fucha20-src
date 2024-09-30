@@ -1,15 +1,16 @@
-// Copyright (c) 2017-2019 The fucha developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2021-2023 The FUCHA Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef fucha_CSPORKDB_H
-#define fucha_CSPORKDB_H
+#ifndef PIVX_CSPORKDB_H
+#define PIVX_CSPORKDB_H
 
-#include <boost/filesystem/path.hpp>
-#include "leveldbwrapper.h"
+#include "fs.h"
+#include "dbwrapper.h"
 #include "spork.h"
 
-class CSporkDB : public CLevelDBWrapper
+class CSporkDB : public CDBWrapper
 {
 public:
     CSporkDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);
@@ -25,4 +26,4 @@ public:
 };
 
 
-#endif //fucha_CSPORKDB_H
+#endif //PIVX_CSPORKDB_H

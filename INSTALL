@@ -1,4 +1,4 @@
-Building fucha
+Building FUCHA
 
 Use the autogen script to prepare the build environment.
 
@@ -8,6 +8,6 @@ Use the autogen script to prepare the build environment.
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building fuchad,
+See doc/build-*.md for instructions on building FUCHAd,
 the intended-for-services, no-graphical-interface, reference
-implementation of fucha.
+implementation of FUCHA.

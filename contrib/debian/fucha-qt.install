@@ -1,6 +1,0 @@
-usr/local/bin/fucha-qt usr/bin
-share/pixmaps/fucha32.xpm usr/share/pixmaps
-share/pixmaps/fucha16.xpm usr/share/pixmaps
-share/pixmaps/fucha128.png usr/share/pixmaps
-debian/fucha-qt.desktop usr/share/applications
-debian/fucha-qt.protocol usr/share/kde4/services/

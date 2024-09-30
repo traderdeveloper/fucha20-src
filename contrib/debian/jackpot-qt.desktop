@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=FUCHA 
+Comment=FUCHA P2P Cryptocurrency
+Comment[fr]=FUCHA, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=FUCHA, eşten eşe kriptografik sanal para birimi
+Exec=FUCHA-qt %u
+Terminal=false
+Type=Application
+Icon=pivx128
+MimeType=x-scheme-handler/FUCHA;
+Categories=Office;Finance;
+StartupWMClass=FUCHA-qt

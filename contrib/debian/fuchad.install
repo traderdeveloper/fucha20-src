@@ -1,3 +1,0 @@
-usr/local/bin/fuchad usr/bin
-usr/local/bin/fucha-cli usr/bin
-debian/examples/fucha.conf etc/fucha

@@ -1,9 +1,10 @@
-// Copyright (c) 2019 The fucha developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2021-2023 The FUCHA Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef fucha_PAIRRESULT_H
-#define fucha_PAIRRESULT_H
+#ifndef PIVX_PAIRRESULT_H
+#define PIVX_PAIRRESULT_H
 
 
 class PairResult {
@@ -17,4 +18,4 @@ public:
 };
 
 
-#endif //fucha_PAIRRESULT_H
+#endif //PIVX_PAIRRESULT_H

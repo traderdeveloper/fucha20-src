@@ -1,4 +1,4 @@
-Source: fucha
+Source: FUCHA
 Section: utils
 Priority: optional
 Maintainer: Fuzzbawls <fuzzbawls@gmail.com>
@@ -28,37 +28,37 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.fucha.rocks
-Vcs-Git: git://github.com/traderdeveloper/fucha.git
-Vcs-Browser: http://github.com/traderdeveloper/fucha
+Homepage: https://www.fucha.rocks/
+Vcs-Git: git:github.com/FUCHA/FUCHA.git
+Vcs-Browser: https://github.com/traderdeveloper//FUCHA/
 
-Package: fuchad
+Package: FUCHAd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- fucha is a free open source peer-to-peer electronic cash system that
+ FUCHA is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 10+ GB of space, slowly growing.
+ requires 18.5+ GB of space, slowly growing.
  .
- This package provides the daemon, fuchad, and the CLI tool
- fucha-cli to interact with the daemon.
+ This package provides the daemon, FUCHAd, and the CLI tool
+ FUCHA-cli to interact with the daemon.
 
-Package: fucha-qt
+Package: FUCHA-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- fucha is a free open source peer-to-peer electronic cash system that
+ FUCHA is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 10+ GB of space, slowly growing.
+ requires 18.5+ GB of space, slowly growing.
  .
- This package provides fucha-Qt, a GUI for fucha based on Qt.
+ This package provides FUCHA-Qt, a GUI for FUCHA based on Qt.
